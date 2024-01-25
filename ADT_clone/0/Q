@@ -1,0 +1,55 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  8
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+/*   Windows 32 and 64 bit porting by blueCAPE: http://www.bluecape.com.pt   *\
+|  Based on Windows porting (2.0.x v4) by Symscape: http://www.symscape.com   |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      Q;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    walls
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    ADT_chamber
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    CFan
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    AMI1
+    {
+        type            zeroGradient;
+        value           uniform 0;
+    }
+    AMI2
+    {
+        type            zeroGradient;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //
